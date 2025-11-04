@@ -7,7 +7,7 @@ function alertFunction() {
     alert("You clicked the button!");
 }
 
-const btn1 = document.querySelector("#btn1");
+const btn = document.querySelector("#btn1");
 /* btn1.onclick = alertFunction; */
 btn.addEventListener("click", alertFunction);
 
@@ -20,6 +20,10 @@ e has many parameters that may be accessed
 */
 btn.addEventListener("click", function (e) {
     console.log(e);
+    if (e.isTrusted)
+        console.log("From User");
+    else
+        console.log("From Script");
 })
 
 // Adding multiple event listeners to groups of nodes
@@ -29,3 +33,7 @@ buttons.forEach((button) => {
         alert(button.id);
     });
 })
+
+/*---------- Dispatching Events ----------*/
+let newEvent = new Event(`click`, { bubbles: true, cancelable: false });
+btn.dispatchEvent(newEvent);
