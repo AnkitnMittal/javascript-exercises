@@ -2,6 +2,9 @@
 
 These JavaScript exercises are intended to complement the JavaScript content on [The Odin Project](https://www.theodinproject.com/) (TOP). They should only be done when instructed during the course of the curriculum.
 
+> [!IMPORTANT]
+> We encourage you to practice your git skills by committing your changes and pushing them to your own fork.  However, please **DO NOT** open a Pull Request to have your solutions merged into this repo or to show your solution.  If we were to merge your changes the exercises would no longer be available as intended for new learners, and opening a PR only causes additional work for us, as we have to close it without merging.
+
 ## Contributing
 
 If you have a suggestion to improve an exercise, an idea for a new exercise, or notice an issue with an exercise, please feel free to open an issue after thoroughly reading our [contributing guide](https://github.com/TheOdinProject/javascript-exercises/blob/main/CONTRIBUTING.md).
@@ -17,7 +20,7 @@ If you have a suggestion to improve an exercise, an idea for a new exercise, or 
    - A markdown file with a description of the task, an empty (or mostly empty) JavaScript file, and a set of tests.
    - A `solutions` directory that contains an example solution and the same test file with all of the tests unskipped.
 
-   To complete an exercise, you will need to go to the exercise directory with `cd exerciseName` in the terminal and run `npm test exerciseName.spec.js`. This should run the test file and show you the output. When you run a test for the first time, it will fail. This is by design! You must open the exercise file and write the code needed to get the test to pass.
+   To complete an exercise, you will need to go to the exercise directory with `cd <path to file>` in the terminal and run `npm test exerciseName.spec.js`. For example, to go to the first Foundations exercise "helloWorld", you need to `cd foundations/01_helloWorld` then run `npm test helloWorld`. This should run the test file and show you the output. When you run a test for the first time, it will fail. This is by design! You must open the exercise file and write the code needed to get the test to pass.
 
 1. Some of the exercises have test conditions defined in their spec file as `test.skip` instead of `test`. This is intentional. Once all `test`s pass, you will change the next `test.skip` to `test` and test your code again. You will do this until all conditions are satisfied. **All tests must pass at the same time**, and you should not have any instances of `test.skip` in the spec file when you are finished with an exercise.
 1. Once you successfully finish an exercise, check the `solutions` directory within each exercise.
