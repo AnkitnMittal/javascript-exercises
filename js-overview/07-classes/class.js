@@ -38,3 +38,23 @@ function makeClass(phrase) {
 
 let Person = makeClass("Hello");
 new Person().sayHi();
+
+/* ----- Bound Methods with class fields: Losing "this" ----- 
+Cause the methods are defined inside the prototype away from object, 'this' is lost
+
+1. Either use a wrapper function as below
+2. Bind the function to the class object using func.bind(user)
+*/
+
+class Button {
+    constructor(value) {
+        this.value = value;
+    }
+
+    click = () => {
+        console.log(this.value);
+    }
+}
+
+let button = new Button("Hello");
+setTimeout(button.click, 1000);
