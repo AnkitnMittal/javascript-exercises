@@ -1,0 +1,15 @@
+{
+    "squadName": "Super Hero Squad",
+    "members": [
+        {
+            "name": "Molecule Man",
+            "power": "Inivisibility"
+        },
+        {
+            "name": "Madame Uppercut",
+            "power": "Super Speed"
+        }
+    ],
+    "formed": 2016,
+    "active": true
+}
