@@ -30,25 +30,23 @@ watchTutorialCallback(
 
 /* ---------- Equivalent Promise Function ---------- */
 
-function watchTutorialPromise() {
-  return new Promise((resolve, reject) => {
-    if (userLeft) {
-      reject({
-        name: "User Left",
-        message: ":(",
-      });
-    } else if (userWatchingCatMeme) {
-      reject({
-        name: "User Watching Cat Meme",
-        message: "WebDevSimplified < Cat",
-      });
-    } else {
-      resolve("Thumbs up and Subscribe");
-    }
-  });
-}
+let watchTutorialPromise = new Promise((resolve, reject) => {
+  if (userLeft) {
+    reject({
+      name: "User Left",
+      message: ":(",
+    });
+  } else if (userWatchingCatMeme) {
+    reject({
+      name: "User Watching Cat Meme",
+      message: "WebDevSimplified < Cat",
+    });
+  } else {
+    resolve("Thumbs up and Subscribe");
+  }
+});
 
-watchTutorialPromise()
+watchTutorialPromise
   .then((message) => {
     console.log(message);
   })
