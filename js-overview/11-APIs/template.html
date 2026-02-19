@@ -9,16 +9,31 @@
     <img id="gifsrc" src="#" />
     <script>
       const img = document.getElementById("gifsrc");
+      const url =
+        "https://api.giphy.com/v1/gifs/translate?api_key=GIPHY_API_KEY&s=cats";
 
-      fetch(
-        "https://api.giphy.com/v1/gifs/translate?api_key=GIPHY_API_KEY&s=cats",
-      )
+      /* ---------- Using Promises ---------- */
+      fetch(url)
         .then((response) => {
           return response.json();
         })
         .then((response) => {
           img.src = response.data.images.original.url;
+        })
+        .catch((error) => {
+          console.error("Error fetching Giphy data:", error);
         });
+
+      /* ---------- Using Async/Await ---------- */
+      async function getCats() {
+        try {
+          const response = await fetch(url);
+          const catData = await response.json();
+          img.src = catData.data.images.original.url;
+        } catch (error) {
+          console.error("Error fetching Giphy data:", error);
+        }
+      }
     </script>
   </body>
 </html>
